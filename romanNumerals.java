@@ -16,10 +16,12 @@ public class romanNumerals {
 	}
 	public static String romanDigit(int n, String ones, String fives){
 		String x = "";
-		if ((n%10 < 5)&&(n%10>0)){
+		if ((n%10 < 4)&&(n%10>0)){
 			for (int i = 1; i<=n%10; i++){
 				System.out.print(ones);
 			}
+		}else if (n%10==4){
+			System.out.print(ones + fives);
 		}else if (n%10>=5){
 			System.out.print(fives);
 			for (int i = 1; i <= ((n%10)-5); i++){
